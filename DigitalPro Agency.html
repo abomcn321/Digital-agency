@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="DigitalPro Agency - Websites, graphic design, branding and digital marketing services.">
+<title>DigitalPro Agency | Grow Your Business Online</title>
+<style>
+:root{
+  --bg:#f7f9fc;--surface:#fff;--text:#172033;--muted:#5b6b82;--navy:#07152f;--navy2:#123c70;
+  --accent:#0ea5e9;--accent-d:#0284c7;--accent-l:#38bdf8;--soft:#e0f2fe;--soft-t:#075985;--shadow:0 5px 25px rgba(0,0,0,.07);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0a1222;--surface:#111c33;--text:#e6edf7;--muted:#9fb0c8;--soft:#0f2a47;--soft-t:#7dd3fc;--shadow:0 5px 25px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a1222;--surface:#111c33;--text:#e6edf7;--muted:#9fb0c8;--soft:#0f2a47;--soft-t:#7dd3fc;--shadow:0 5px 25px rgba(0,0,0,.4);color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:101}
+a{color:inherit}
+header{background:var(--navy);color:#fff;padding:16px 7%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:env(safe-area-inset-top,0px);z-index:100}
+.logo{font-size:24px;font-weight:700;color:var(--accent-l);text-decoration:none}
+nav{display:flex;gap:24px;align-items:center}
+nav a{color:#fff;text-decoration:none;font-size:14px}
+nav a:hover{color:var(--accent-l)}
+.menu-btn{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
+.hero{min-height:580px;padding:100px 7%;display:flex;align-items:center;background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff}
+.hero-content{max-width:720px}
+.hero h1{font-size:clamp(36px,6vw,62px);line-height:1.1;margin:15px 0}
+.hero h1 span{color:var(--accent-l)}
+.hero p{color:#d5e4f5;font-size:18px;margin-bottom:28px}
+.tag{color:var(--accent-l);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 25px;border-radius:8px;text-decoration:none;font-weight:700;border:none;cursor:pointer;transition:.3s;font-size:15px}
+.btn:hover{background:var(--accent-d);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid #fff;margin-left:10px}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+section{padding:75px 7%}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:34px}
+.section-title p{color:var(--muted)}
+.stats{background:var(--surface);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;text-align:center;padding:45px 7%}
+.stats b{display:block;font-size:36px;color:var(--accent-d)}
+.stats span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:var(--surface);padding:28px;border-radius:12px;box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px)}
+.card .icon{font-size:34px;margin-bottom:12px}
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted)}
+.card.featured{border:2px solid var(--accent);position:relative}
+.badge{position:absolute;top:-13px;right:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px}
+.about{background:var(--surface);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about h2{font-size:34px;margin:8px 0 15px}
+.about p{color:var(--muted);margin-bottom:20px}
+.about-box{background:var(--soft);border-radius:15px;padding:40px;text-align:center;color:var(--soft-t);font-size:24px;font-weight:700}
+.steps{counter-reset:s}
+.steps .card::before{counter-increment:s;content:counter(s);width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.price{font-size:28px;font-weight:700;color:var(--accent-d);margin:12px 0}
+.card ul{padding-left:20px;margin:14px 0 22px;color:var(--muted);flex:1}
+.portfolio-card{min-height:170px;background:linear-gradient(135deg,#0c2850,#0ea5e9);border-radius:12px;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;font-size:20px;font-weight:700;gap:6px}
+.portfolio-card small{font-weight:400;font-size:14px;opacity:.9}
+.quote p{font-style:italic;margin-bottom:14px}
+.quote b{font-size:14px}
+.faq{max-width:760px;margin:0 auto}
+details{background:var(--surface);border-radius:10px;box-shadow:var(--shadow);padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--muted);margin-top:10px}
+.contact{background:var(--navy);color:#fff;text-align:center}
+.contact h2{font-size:34px}
+.contact>p{color:#cbd5e1;margin:12px 0 25px}
+.contact-form{max-width:560px;margin:25px auto 0;display:grid;gap:13px;text-align:left}
+label{font-size:14px;color:#cbd5e1}
+input,textarea,select{width:100%;padding:14px;border:none;border-radius:8px;font-size:15px;background:#fff;color:#172033}
+textarea{min-height:120px;resize:vertical}
+.err{color:#fca5a5;font-size:13px;min-height:16px}
+.contact-info{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:30px;color:#cbd5e1;font-size:14px}
+.contact-info a{text-decoration:none;color:var(--accent-l)}
+footer{background:#030b19;color:#cbd5e1;text-align:center;padding:26px;font-size:14px}
+footer a{color:var(--accent-l);text-decoration:none;margin:0 8px}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:90}
+.theme{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:20px;padding:4px 12px;cursor:pointer;font-size:13px}
+@media(max-width:760px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--navy);flex-direction:column;align-items:flex-start;padding:20px 7%}
+  nav.active{display:flex}
+  .hero{min-height:500px;padding-top:75px}
+  .about{grid-template-columns:1fr}
+  .btn-outline{margin:12px 0 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">DigitalPro.</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav id="nav" aria-label="Main">
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a>
+    <a href="#portfolio">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    <button class="theme" id="themeBtn" type="button" aria-label="Toggle dark mode">◐ Theme</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">Your Digital Growth Partner</div>
+    <h1>We Build Digital Solutions That <span>Grow Businesses.</span></h1>
+    <p>From professional websites to branding and digital marketing, we help businesses establish a powerful online presence.</p>
+    <a href="#contact" class="btn">Start Your Project</a>
+    <a href="#services" class="btn btn-outline">Explore Services</a>
+  </div>
+</section>
+
+<div class="stats">
+  <div><b>50+</b><span>Projects delivered</span></div>
+  <div><b>30+</b><span>Happy clients</span></div>
+  <div><b>5★</b><span>Client satisfaction</span></div>
+  <div><b>24h</b><span>Reply time</span></div>
+</div>
+
+<section id="services">
+  <div class="section-title"><h2>Our Services</h2><p>Everything your business needs to grow online.</p></div>
+  <div class="cards">
+    <div class="card"><div class="icon">💻</div><h3>Website Development</h3><p>Modern, fast, responsive websites that turn visitors into customers.</p></div>
+    <div class="card"><div class="icon">🎨</div><h3>Graphic Design</h3><p>Logos, posters, banners and social media designs that stand out.</p></div>
+    <div class="card"><div class="icon">📱</div><h3>Social Media Management</h3><p>Build your brand and reach more customers every day.</p></div>
+    <div class="card"><div class="icon">🚀</div><h3>Digital Marketing</h3><p>Promote your products and services to the right audience.</p></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div>
+    <div class="tag">Who We Are</div>
+    <h2>Helping Businesses Move Forward.</h2>
+    <p>DigitalPro Agency is a digital services brand focused on helping entrepreneurs and small businesses succeed online. We combine creativity, technology and practical solutions to help our clients grow.</p>
+    <a href="#contact" class="btn">Work With Us</a>
+  </div>
+  <div class="about-box">💡<br>Ideas Into Digital Success</div>
+</section>
+
+<section>
+  <div class="section-title"><h2>How We Work</h2><p>A simple process from idea to launch.</p></div>
+  <div class="cards steps">
+    <div class="card"><h3>Discover</h3><p>We learn about your business, goals and audience.</p></div>
+    <div class="card"><h3>Design</h3><p>We create a clear, modern design for your approval.</p></div>
+    <div class="card"><h3>Build</h3><p>We develop and test everything on all devices.</p></div>
+    <div class="card"><h3>Launch</h3><p>We go live and support you as you grow.</p></div>
+  </div>
+</section>
+
+<section id="portfolio" style="background:var(--surface)">
+  <div class="section-title"><h2>Our Work</h2><p>A showcase of what we can create for you.</p></div>
+  <div class="cards">
+    <div class="portfolio-card">Business Websites<small>Corporate and service sites</small></div>
+    <div class="portfolio-card">Brand Identity<small>Logos and brand kits</small></div>
+    <div class="portfolio-card">Online Stores<small>Sell products online</small></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="section-title"><h2>Our Packages</h2><p>Affordable starting prices for growing businesses.</p></div>
+  <div class="cards">
+    <div class="card">
+      <h3>Starter Website</h3><div class="price">KSh 5,000</div><p>For individuals and small businesses.</p>
+      <ul><li>One-page website</li><li>Mobile-friendly design</li><li>Contact information</li></ul>
+      <a href="#contact" class="btn" data-pkg="Starter Website">Choose Package</a>
+    </div>
+    <div class="card featured">
+      <span class="badge">Most Popular</span>
+      <h3>Business Website</h3><div class="price">KSh 12,000</div><p>For businesses ready to grow.</p>
+      <ul><li>Up to 5 pages</li><li>Professional design</li><li>WhatsApp integration</li><li>Contact form</li></ul>
+      <a href="#contact" class="btn" data-pkg="Business Website">Choose Package</a>
+    </div>
+    <div class="card">
+      <h3>Premium Package</h3><div class="price">KSh 25,000</div><p>For established businesses.</p>
+      <ul><li>Up to 10 pages</li><li>Advanced design</li><li>SEO basics</li><li>Business features</li></ul>
+      <a href="#contact" class="btn" data-pkg="Premium Package">Choose Package</a>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--muted);margin-top:20px;font-size:14px">Starting prices. Final price is confirmed after we discuss your project.</p>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-title"><h2>What Clients Say</h2><p>Kind words from the businesses we've worked with.</p></div>
+  <div class="cards">
+    <div class="card quote"><p>“Our new website brought in enquiries within the first week. Very professional team.”</p><b>— Small business owner</b></div>
+    <div class="card quote"><p>“Fast, affordable and they really listened to what we needed.”</p><b>— Retail client</b></div>
+    <div class="card quote"><p>“Our logo and social media look completely transformed.”</p><b>— Startup founder</b></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-title"><h2>Frequently Asked Questions</h2></div>
+  <div class="faq">
+    <details><summary>How long does a website take?</summary><p>A starter site can take a few days; larger sites usually take 2–4 weeks depending on content.</p></details>
+    <details><summary>How do I pay?</summary><p>We agree on the price first. Payment details are shared on WhatsApp once you confirm your package.</p></details>
+    <details><summary>Will my site work on phones?</summary><p>Yes. Every website we build is mobile-friendly and tested on common devices.</p></details>
+    <details><summary>Can you update my site later?</summary><p>Yes, we offer updates and support after launch. Just send us a message.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let's Build Something Great</h2>
+  <p>Tell us about your project. We'll reply on WhatsApp.</p>
+  <form class="contact-form" id="contactForm" novalidate>
+    <div><label for="name">Full name</label><input type="text" id="name" autocomplete="name" placeholder="Your full name"><div class="err" id="e-name"></div></div>
+    <div><label for="email">Email address</label><input type="email" id="email" autocomplete="email" placeholder="you@example.com"><div class="err" id="e-email"></div></div>
+    <div><label for="service">Service</label>
+      <select id="service">
+        <option value="">Choose a service</option>
+        <option>Website Development</option><option>Graphic Design</option>
+        <option>Social Media Management</option><option>Digital Marketing</option><option>Other</option>
+      </select><div class="err" id="e-service"></div></div>
+    <div><label for="message">Project details</label><textarea id="message" placeholder="Tell us about your project..."></textarea><div class="err" id="e-message"></div></div>
+    <button type="submit" class="btn">Send Enquiry on WhatsApp</button>
+  </form>
+  <div class="contact-info">
+    <span>📞 <a href="tel:+254183710327">0183 710 327</a></span>
+    <span>💬 <a href="https://wa.me/254183710327" target="_blank" rel="noopener">Chat on WhatsApp</a></span>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> DigitalPro Agency. All rights reserved.</p>
+  <p>Turning Ideas Into Digital Success.</p>
+  <p style="margin-top:8px"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></p>
+</footer>
+
+<a class="wa" href="https://wa.me/254183710327?text=Hello%20DigitalPro%20Agency!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+var WA="254183710327";
+var nav=document.getElementById("nav"),mb=document.getElementById("menuBtn");
+function setMenu(o){nav.classList.toggle("active",o);mb.setAttribute("aria-expanded",o);mb.setAttribute("aria-label",o?"Close menu":"Open menu")}
+mb.addEventListener("click",function(){setMenu(!nav.classList.contains("active"))});
+nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){setMenu(false)})});
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.getElementById("themeBtn").addEventListener("click",function(){
+  var r=document.documentElement,dark=matchMedia("(prefers-color-scheme: dark)").matches;
+  var cur=r.getAttribute("data-theme")||(dark?"dark":"light");
+  r.setAttribute("data-theme",cur==="dark"?"light":"dark");
+});
+
+document.querySelectorAll("[data-pkg]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var m=document.getElementById("message");
+    if(!m.value)m.value="I'm interested in the "+b.dataset.pkg+" package.";
+    document.getElementById("service").value="Website Development";
+  });
+});
+
+function setErr(id,t){document.getElementById("e-"+id).textContent=t;return !t}
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var n=document.getElementById("name").value.trim(),em=document.getElementById("email").value.trim(),
+      s=document.getElementById("service").value,m=document.getElementById("message").value.trim();
+  var ok=setErr("name",n?"":"Please enter your name");
+  ok=setErr("email",/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)?"":"Enter a valid email")&&ok;
+  ok=setErr("service",s?"":"Please choose a service")&&ok;
+  ok=setErr("message",m?"":"Please describe your project")&&ok;
+  if(!ok)return;
+  var text="Hello DigitalPro Agency!\nName: "+n+"\nEmail: "+em+"\nService: "+s+"\nProject: "+m;
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),"_blank","noopener");
+});
+</script>
+</body>
+</html>
